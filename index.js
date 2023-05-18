@@ -25,7 +25,7 @@ const PORT = 4000;
 app.get("/", function (req, res) {
   // res.cookie("name","na");
   // console.log(req.cookie);
-  res.send("🙋‍♂️, 🌏 🎊✨🤩");
+  res.send("🙋‍♂️, 🌏 🎊✨");
 });
 app.get("/set-cookie", (req, res) => {});
 app.use("/api/user", authRouter);
