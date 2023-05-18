@@ -12,7 +12,7 @@ export const authMiddleware = asyncHandler(async (req, res, next) => {
       next();
     } else {
       res.json({
-        token: "no token",
+        token: "no toke",
       });
     }
   } catch (err) {
