@@ -21,13 +21,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(cookieparser());
 
-const PORT = 4000;
+const PORT = process.env.PORT;
 app.get("/", function (req, res) {
   // res.cookie("name","na");
-  // console.log(req.cookie);
   res.send("🙋‍♂️, 🌏 🎊✨");
 });
-app.get("/set-cookie", (req, res) => {});
 app.use("/api/user", authRouter);
 app.use("/api/user-request", addDressRouter);
 // app.use("/api/user/:id", authMiddleware, addDressRouter);

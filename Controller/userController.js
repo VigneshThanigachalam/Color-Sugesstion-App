@@ -115,11 +115,11 @@ export const forgetPasswordtoken = asyncHandler(async (req, res) => {
   try {
     const token = await user_details.createpasswordResetToken();
     await user_details.save();
-    const appUrl = process.env.FRONT_END_URL;
+    const appUrl = req.get("origin");
     const resetURL = `<a href="${appUrl}/reset-password/${token}">click here</a>`;
     const data = {
       to: email,
-      subject: "Dress Color Sugesstion App - forget password link",
+      subject: "Dress Color Sugesstion App - Reset Password Link",
       html: `Please ${resetURL} to create new password.`,
     };
     sendEmail(data);
@@ -165,7 +165,7 @@ export const validateToken = asyncHandler(async (req, res) => {
 
 export const savedCount = asyncHandler(async (req, res) => {
   const { addedDress } = req.user;
-  // console.log(addedDress.length);
+  console.log(req.get("orgin"));
   try {
     const count = addedDress.length;
     res.json({
