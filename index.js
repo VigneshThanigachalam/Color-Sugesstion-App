@@ -10,6 +10,7 @@ import { addDressRouter } from "./routes/addDressRoutes.js";
 import cron from "node-cron";
 import { suggestionMail } from "./utils/suggestionMail.js";
 import dotenv from "dotenv";
+import nodemailer from "nodemailer";
 
 const app = express();
 dotenv.config();
