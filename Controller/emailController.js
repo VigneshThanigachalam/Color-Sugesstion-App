@@ -12,11 +12,25 @@ console.log(process.env.EMAIL_USER);
 console.log(process.env.EMAIL_PASSWORD);
 console.log(process.env.EMAIL_USER);
   // send mail with defined transport object
-  let info = await transporter.sendMail({
-    from: `vigneshthanika03@gmail.com`, // sender address
-    to: `vigneshthanika03@gmail.com`, // list of receivers
+//   let info = await transporter.sendMail({
+//     from: `vigneshthanika03@gmail.com`, // sender address
+//     to: `vigneshthanika03@gmail.com`, // list of receivers
+//     subject: "data.subject", // Subject line
+//     html: "data.html", // html body
+//   });
+  const mailOption= {
+    from: "vigneshthanika03@gmail.com", // sender address
+    to: "vigneshthanika03@gmail.com", // list of receivers
     subject: "data.subject", // Subject line
-    html: "data.html", // html body
-  });
-  console.log(info)
+    text: "data.html", // html body
+  }
+  transporter.sendMail(mailOption, function(error, info){
+  if(error){
+  console.log(error)
+  }
+    else{
+    console.log("hi"+info.response)
+    }
+  })
+  console.log("info")
 });
