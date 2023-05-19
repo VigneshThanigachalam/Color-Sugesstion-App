@@ -4,8 +4,8 @@ export const sendEmail = asyncHandler(async (data, req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: `vigneshthanika03@gmail.com`, // generated ethereal user
-      pass: `iqvupukrkfbugsjt`, // generated ethereal password
+      user: "vigneshthanika03@gmail.com", // generated ethereal user
+      pass: "iqvupukrkfbugsjt", // generated ethereal password
     },
   });
 console.log(process.env.EMAIL_USER);
@@ -21,10 +21,10 @@ console.log(process.env.EMAIL_USER);
   const mailOption= {
     from: "vigneshthanika03@gmail.com", // sender address
     to: "vigneshthanika03@gmail.com", // list of receivers
-    subject: "data.subject", // Subject line
-    text: "data.html", // html body
+    subject: "datasubject", // Subject line
+    text: "datahtml", // html body
   }
-  transporter.sendMail(mailOption, function(error, info){
+  transporter.sendMail(mailOption, (error, info)=>{
   if(error){
   console.log(error)
   }
