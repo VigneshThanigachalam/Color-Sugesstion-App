@@ -25,7 +25,8 @@ console.log(process.env.EMAIL_USER);
     subject: "datasubject", // Subject line
     text: "datahtml", // html body
   }
-  transporter.sendMail(mailOption, (error, info)=>{
+ await new Promise((resolve, reject) => {
+   transporter.sendMail(mailOption, (error, info)=>{
   if(error){
   console.log(error)
   }
@@ -33,5 +34,6 @@ console.log(process.env.EMAIL_USER);
     console.log("hi"+info.response)
     }
   })
+ });
   console.log("info")
 });
