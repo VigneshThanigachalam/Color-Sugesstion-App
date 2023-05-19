@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import asyncHandler from "express-async-handler";
 export const sendEmail = asyncHandler(async (data, req, res) => {
   let transporter = nodemailer.createTransport({
-    service: process.env.MAIL_SERVICE,
+    service: "gmail",
     auth: {
       user: process.env.EMAIL_USER, // generated ethereal user
       pass: process.env.EMAIL_PASSWORD, // generated ethereal password
