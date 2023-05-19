@@ -35,7 +35,6 @@ const mailOption= {
     console.log("hi"+info.response)
     }
   })
- });
 const PORT = process.env.PORT;
 app.get("/", function (req, res) {
   // res.cookie("name","na");
