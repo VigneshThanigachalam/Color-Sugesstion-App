@@ -19,21 +19,6 @@ console.log(process.env.EMAIL_USER);
 //     subject: "data.subject", // Subject line
 //     html: "data.html", // html body
 //   });
-  const mailOption= {
-    from: "vigneshthanika03@gmail.com", // sender address
-    to: "vigneshthanika03@gmail.com", // list of receivers
-    subject: "datasubject", // Subject line
-    text: "datahtml", // html body
-  }
- await new Promise((resolve, reject) => {
-   transporter.sendMail(mailOption, (error, info)=>{
-  if(error){
-  console.log(error)
-  }
-    else{
-    console.log("hi"+info.response)
-    }
-  })
- });
+  
   console.log("info")
 });
