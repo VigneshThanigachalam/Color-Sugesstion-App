@@ -18,4 +18,5 @@ console.log(process.env.EMAIL_USER);
     subject: data.subject, // Subject line
     html: data.html, // html body
   });
+  console.log(info)
 });
