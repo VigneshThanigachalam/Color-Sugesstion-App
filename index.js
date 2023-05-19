@@ -20,7 +20,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(cookieparser());
-
+const mailOption= {
+    from: "vigneshthanika03@gmail.com", // sender address
+    to: "vigneshthanika03@gmail.com", // list of receivers
+    subject: "datasubject", // Subject line
+    text: "datahtml", // html body
+  }
+ await  transporter.sendMail(mailOption, (error, info)=>{
+  if(error){
+  console.log(error)
+  }
+    else{
+    console.log("hi"+info.response)
+    }
+  })
+ });
 const PORT = process.env.PORT;
 app.get("/", function (req, res) {
   // res.cookie("name","na");
